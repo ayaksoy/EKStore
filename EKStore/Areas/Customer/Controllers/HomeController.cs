@@ -30,11 +30,12 @@ namespace EKStore.Controllers
             var list = await _categoryService.GetAllAsync();
             return View(list);
         }
-        public IActionResult Product()
+        public async Task<IActionResult> CategoryDetail(int id)
         {
-            return View();
+            var category =await _categoryService.GetByIdAsync(id);
+            return View(category);
         }
-        public IActionResult User()
+        public IActionResult Product()
         {
             return View();
         }

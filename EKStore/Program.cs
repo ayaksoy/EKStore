@@ -27,7 +27,7 @@ namespace EKStore
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
-            builder.Services.AddTransient<ICategoryService,CategoryService>();
+            builder.Services.AddTransient<ICategoryService, AdminService>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {

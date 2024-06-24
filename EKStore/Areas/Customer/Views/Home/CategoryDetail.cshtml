@@ -1,0 +1,14 @@
+@model EKStore.Models.Category
+
+<div class="row">
+	<div class="col-md-6">
+		<img src="~/favicon.ico"class="w-100">
+	</div>
+	<div class="col-md-6 ps-5">
+		<h3>@Model.Name</h1>
+			<hr>
+			<p>@Model.Description</p>
+			<button class="disabled btn btn-@(Model.IsStatus? "success" : "danger")">@(Model.IsStatus ?
+				"Active" : "Passive")</button>
+	</div>
+</div>

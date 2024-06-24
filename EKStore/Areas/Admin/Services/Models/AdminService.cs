@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EKStore.Areas.Customer.Services.Interfaces;
+using EKStore.Areas.Admin.Services.Interfaces;
 using EKStore.Data;
 using EKStore.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EKStore.Areas.Customer.Services.Models
+namespace EKStore.Areas.Admin.Services.Models
 {
-    public class AdminService : ICategoryService
+    public class AdminService : IAdminService
     {
         private readonly ApplicationDbContext db;
         public AdminService(ApplicationDbContext db)

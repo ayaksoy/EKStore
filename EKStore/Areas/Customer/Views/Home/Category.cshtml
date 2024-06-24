@@ -11,14 +11,14 @@
 	</thead>
 
 	<tbody>
-		@foreach(var item in Model)
+		@foreach (var item in Model)
 		{
 			<tr>
 				<td>@item.Id</td>
 				<td>@item.Name</td>
 				<td>@item.IsStatus</td>
-				<td>
-					<a href="" class="btn btn-primary btn-sm">Details</a>
+				<td><a asp-area="Customer" asp-controller="Home" asp-action="CategoryDetail" asp-route-id="@item.Id"
+						class="btn btn-primary btn-sm">Details</a>
 				</td>
 			</tr>
 		}
