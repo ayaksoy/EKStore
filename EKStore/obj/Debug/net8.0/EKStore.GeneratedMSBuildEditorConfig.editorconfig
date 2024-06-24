@@ -26,12 +26,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/ahmet/Desktop/EKStore-1/EKStore
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9DYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9Qcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/Role.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9Sb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/Home/User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQ3VzdG9tZXIvVmlld3MvSG9tZS9Vc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahmet/Desktop/EKStore-1/EKStore/Areas/Customer/Views/_ViewImports.cshtml]

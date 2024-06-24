@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace EKStore.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,6 +20,10 @@ namespace EKStore.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Category()
         {
             return View();
         }
