@@ -1,12 +1,9 @@
-﻿using System;
-using Store.Models;
-using Store.Models.Abstract;
+﻿using EKStore.Models.Abstracts;
 
 namespace EKStore.Models
 {
-    public class Category : CommonProp
+    public class Category:CommonProp
     {
-        public List<Product>? Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }
-
