@@ -1,3 +1,4 @@
+using EKStore.Areas.Customer.Services.Interfaces;
 using EKStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,10 +9,11 @@ namespace EKStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ICategoryService _categoryService;
+        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService)
         {
             _logger = logger;
+            _categoryService = categoryService;
         }
 
         public IActionResult Index()
@@ -23,7 +25,16 @@ namespace EKStore.Controllers
         {
             return View();
         }
-        public IActionResult Category()
+        public async Task<IActionResult> Category()
+        {
+            var list = await _categoryService.GetAllAsync();
+            return View(list);
+        }
+        public IActionResult Product()
+        {
+            return View();
+        }
+        public IActionResult User()
         {
             return View();
         }

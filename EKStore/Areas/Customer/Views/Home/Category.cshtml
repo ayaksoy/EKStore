@@ -1,0 +1,27 @@
+@model List<EKStore.Models.Category>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach(var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td>@item.IsStatus</td>
+				<td>
+					<a href="" class="btn btn-primary btn-sm">Details</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+</table>

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using EKStore.Email;
+using EKStore.Areas.Customer.Services.Interfaces;
+using EKStore.Areas.Customer.Services.Models;
 namespace EKStore
 {
     public class Program
@@ -25,6 +27,7 @@ namespace EKStore
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
+            builder.Services.AddTransient<ICategoryService,CategoryService>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {
