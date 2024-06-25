@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ahmet/Desktop/EKStore-1/EKStore/EKStore.csproj": {}
+    "/Users/ahmet/Desktop/aaaaaa/EKStore/EKStore.csproj": {}
   },
   "projects": {
-    "/Users/ahmet/Desktop/EKStore-1/EKStore/EKStore.csproj": {
+    "/Users/ahmet/Desktop/aaaaaa/EKStore/EKStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ahmet/Desktop/EKStore-1/EKStore/EKStore.csproj",
+        "projectUniqueName": "/Users/ahmet/Desktop/aaaaaa/EKStore/EKStore.csproj",
         "projectName": "EKStore",
-        "projectPath": "/Users/ahmet/Desktop/EKStore-1/EKStore/EKStore.csproj",
+        "projectPath": "/Users/ahmet/Desktop/aaaaaa/EKStore/EKStore.csproj",
         "packagesPath": "/Users/ahmet/.nuget/packages/",
-        "outputPath": "/Users/ahmet/Desktop/EKStore-1/EKStore/obj/",
+        "outputPath": "/Users/ahmet/Desktop/aaaaaa/EKStore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ahmet/.nuget/NuGet/NuGet.Config"

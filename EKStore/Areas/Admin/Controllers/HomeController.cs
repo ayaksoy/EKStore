@@ -1,21 +1,13 @@
-using EKStore.Areas.Customer.Services.Interfaces;
-using EKStore.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace EKStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class HomeController : Controller
     {
-
-
         public IActionResult Index()
         {
             return View();
         }
-
-
     }
 }
-

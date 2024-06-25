@@ -1,27 +1,28 @@
-@model List<EKStore.Models.Category>
+﻿@model List<EKStore.Models.Category>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
 
 <table class="table">
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Name</th>
-			<th>Status</th>
-			<th>Details</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>@item.Id</td>
-				<td>@item.Name</td>
-				<td>@item.IsStatus</td>
-				<td><a asp-area="Customer" asp-controller="Home" asp-action="CategoryDetail" asp-route-id="@item.Id"
-						class="btn btn-primary btn-sm">Details</a>
-				</td>
-			</tr>
-		}
-	</tbody>
-
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.IsStatus</td>
+                <td><a asp-area="Customer" asp-controller="Home" asp-action="CategoryDetail" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Detail</a></td>
+            </tr>
+        }
+    </tbody>
 </table>

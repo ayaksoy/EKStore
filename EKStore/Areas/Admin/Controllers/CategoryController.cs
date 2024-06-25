@@ -1,41 +1,104 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using EKStore.Areas.Customer.Services.Interfaces;
+﻿using EKStore.Areas.Admin.Services.Interfaces;
+using EKStore.GenericModels;
+using EKStore.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace EKStore.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class CategoryController : Controller
     {
-        ICategoryService _categoryService;
+        IAdminCategoryService _categoryService;
+        private readonly UploadImage uploadImage;
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoryController(IAdminCategoryService categoryService,UploadImage uploadImage)
         {
             _categoryService = categoryService;
-        }
-        private readonly ILogger<CategoryController> _logger;
-
-        public CategoryController(ILogger<CategoryController> logger)
-        {
-            _logger = logger;
+            this.uploadImage = uploadImage;
         }
 
-        public async Task<IActionResult> Index()
-        {
 
-            var list =await _categoryService.GetAllAsync();
+        // GET: CategoryController
+        public async Task<ActionResult> Index()
+        {
+            var list=await _categoryService.GetAllAsync();
             return View(list);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        // GET: CategoryController/Details/5
+        public ActionResult Details(int id)
         {
-            return View("Error!");
+            return View();
+        }
+
+        // GET: CategoryController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: CategoryController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                var files=HttpContext.Request.Form.Files;
+                string image = uploadImage.Image(files, "Category");
+                category.Image= image==null?"emptyCategory.jpg":image;
+
+                TempData["Message"] = await _categoryService.AddAsync(category) ? "Category Added Successful" : "";
+
+            }
+            
+
+
+            return View();
+            
+        }
+
+        // GET: CategoryController/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: CategoryController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: CategoryController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: CategoryController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using EKStore.Email;
 using EKStore.Areas.Customer.Services.Interfaces;
 using EKStore.Areas.Customer.Services.Models;
+using EKStore.Areas.Admin.Services.Interfaces;
+using EKStore.Areas.Admin.Services.Models;
+using EKStore.Areas.Admin.Controllers;
+using EKStore.GenericModels;
 namespace EKStore
 {
     public class Program
@@ -27,7 +31,11 @@ namespace EKStore
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
-            builder.Services.AddTransient<ICategoryService, AdminService>();
+            builder.Services.AddTransient<ICategoryService, CategoryService>();
+            builder.Services.AddTransient<IAdminCategoryService, AdminCategoryService>();
+            builder.Services.AddScoped<UploadImage, EKStore.GenericModels.UploadImage>();
+
+
 
             builder.Services.ConfigureApplicationCookie(options =>
             {
@@ -37,6 +45,9 @@ namespace EKStore
             });
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+
+
+
 
             var app = builder.Build();
 
